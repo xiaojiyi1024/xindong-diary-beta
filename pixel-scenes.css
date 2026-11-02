@@ -1,0 +1,29 @@
+/* Shared lettering with the shell, and four separate opaque scene layers. */
+.intro h1 { display: flex; justify-content: center; line-height: 1; }
+.hero-wordmark { display: block; width: 210px; max-width: 65vw; height: auto; }
+.room { isolation: isolate; background: #f6e5a0; }
+.scene-background {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  image-rendering: pixelated;
+  pointer-events: none;
+  user-select: none;
+  opacity: 1;
+}
+.room[data-scene] .scene-label { display: none; }
+.room .character-button { z-index: 10; opacity: 1; }
+.room .character { mix-blend-mode: normal; opacity: 1; }
+.room .sleep-z { z-index: 11; top: 5px; right: 8%; font-size: 10px; letter-spacing: 1px; text-shadow: 1px 1px #17395c; }
+.room .reaction { z-index: 12; }
+@media (max-width: 780px) {
+  .hero-wordmark { width: 156px; }
+  .intro { padding-top: 11px; padding-bottom: 8px; }
+}
+@media (max-width: 375px) {
+  .hero-wordmark { width: 140px; }
+}

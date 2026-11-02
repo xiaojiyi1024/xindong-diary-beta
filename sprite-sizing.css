@@ -1,0 +1,52 @@
+/* All outfits use the same visible-art viewport in both the game and wardrobe. */
+.room .character-button{overflow:hidden}
+.room svg.character{position:absolute!important;left:11%!important;bottom:3%!important;width:78%!important;height:86%!important;max-width:78%!important;transform:none!important;animation:none!important;overflow:visible;pointer-events:none}
+.room svg.character image,.memory-art .sprite-frame image{filter:url(#solid-sprite);image-rendering:pixelated}
+.room .character-button.sad svg.character image{filter:url(#solid-sprite) saturate(.65)}
+.memory-art{overflow:hidden}
+.memory-art .sprite-frame{position:absolute;inset:8% 10% 8%;width:80%;height:84%;max-width:80%;max-height:84%;display:block;overflow:visible;image-rendering:pixelated}
+.memory-card.locked .sprite-frame image{filter:url(#solid-sprite) brightness(0) saturate(100%) invert(25%) sepia(17%) saturate(1555%) hue-rotate(162deg) brightness(92%);opacity:.72}
+.memory-card.locked .memory-art{background-color:#d9e8eb;background-image:linear-gradient(#fff9dc55 50%,transparent 50%),linear-gradient(90deg,#fff9dc55 50%,transparent 50%)}
+.memory-card.locked .memory-art:after{content:'';position:absolute;inset:0;background:#d7e5e444;pointer-events:none}
+.memory-lock{position:absolute;z-index:3;top:7%;right:7%;display:grid;place-items:center;width:25px;height:25px;border:2px solid #315b7b;background:#fff1ad;box-shadow:2px 2px #abc9cf;font-size:14px;line-height:1}
+.memory-card.locked .memory-number{z-index:4}
+@media(max-width:780px){.memory-strip .memory-art .sprite-frame,.album-grid .memory-art .sprite-frame{inset:8% 10% 8%;width:80%;height:84%;max-width:80%;max-height:84%}}
+.activity-panel[hidden],.birthday-actions[hidden],#star-reply-button[hidden]{display:none!important}
+.birthday-actions{display:grid;grid-template-columns:1fr;gap:8px;margin:12px auto 0;max-width:400px}
+.birthday-actions button{min-height:44px;font-size:13px}
+.play-count{margin:10px 0 0;padding:5px 8px;border:1px solid #c0d3d5;background:#e8f5f4;color:#315979;font-size:11px}
+.special-dialog{width:min(510px,calc(100% - 28px));max-height:calc(100dvh - 32px);overflow:auto}
+.special-dialog .dialog-body{text-align:center;padding:19px 18px 24px}
+.special-dialog .eyebrow{font-size:9px;letter-spacing:2px;color:#6f8aa0}
+.special-dialog h2{margin:4px 0 12px;font-size:clamp(17px,5vw,25px);line-height:1.45;color:#1c4a6c;text-shadow:2px 2px #f7db77}
+.star-reply-stage{position:relative;display:grid;place-items:center;min-height:210px;margin:8px auto 0;background:#fff5c7;border:3px solid #d6bb69;box-shadow:inset 0 0 0 5px #fffce8,4px 4px #afcbd0;overflow:hidden}
+.folded-star{z-index:2;width:150px;height:150px;border:0;background:transparent;padding:0;filter:drop-shadow(5px 7px 0 #c9a43d);cursor:pointer;animation:star-float 2.4s steps(4,end) infinite}
+.folded-star svg{display:block;width:100%;height:100%}
+.unfolded-paper{position:absolute;display:grid;align-content:center;gap:14px;width:min(88%,370px);min-height:145px;padding:18px 14px;background:repeating-linear-gradient(#fffdf3 0 29px,#e2dabb 29px 30px);border:3px solid #b7934f;box-shadow:5px 5px #d8c389;transform:scaleX(.05) rotate(-7deg);opacity:0;overflow:hidden}
+.unfolded-paper span{font-size:9px;letter-spacing:2px;color:#a1782c}
+.unfolded-paper p{margin:0!important;color:#234e69!important;font-weight:900;font-size:clamp(14px,4vw,20px)!important;line-height:1.55!important}
+.star-reply-stage.opening .folded-star{animation:star-unfold 1s steps(8,end) forwards}
+.star-reply-stage.opening .unfolded-paper{animation:paper-open 1.1s steps(8,end) forwards}
+.star-reply-stage.opened .folded-star{display:none}
+.star-reply-stage.opened .unfolded-paper{transform:none;opacity:1}
+.star-reply-body>p:last-child{margin:12px 0 0;font-size:11px}
+@keyframes star-float{50%{transform:translateY(-7px) rotate(5deg)}}
+@keyframes star-unfold{0%{opacity:1;transform:scale(1) rotate(0)}60%{opacity:1;transform:scale(1.16) rotate(26deg)}100%{opacity:0;transform:scale(.2) rotate(75deg)}}
+@keyframes paper-open{0%{opacity:0;transform:scaleX(.05) rotate(-7deg)}30%{opacity:1}100%{opacity:1;transform:scaleX(1) rotate(0)}}
+.birthday-body{background-color:#fff9df;background-image:linear-gradient(#f9e6a558 50%,transparent 50%),linear-gradient(90deg,#b4dbe75c 50%,transparent 50%);background-size:28px 28px}
+.birthday-body h2{font-family:'Microsoft YaHei UI','PingFang SC','Hiragino Sans GB',sans-serif;font-weight:900;letter-spacing:.5px;color:#1c4a6c;text-shadow:none}
+.birthday-scene{position:relative;display:grid;place-items:center;width:min(100%,375px);margin:auto;aspect-ratio:1.18;background:#fffbe7;border:4px solid #91c6d7;box-shadow:inset 0 0 0 5px #fff2b9,5px 5px #d6bd75;overflow:hidden}
+.birthday-scene img{position:relative;z-index:1;display:block;width:82%;max-height:93%;object-fit:contain;image-rendering:pixelated;filter:drop-shadow(3px 4px #edd786)}
+.birthday-spark{position:absolute;z-index:2;color:#ffd459;font-size:31px;text-shadow:2px 2px #ad7725;animation:twinkle 1.4s steps(2,end) infinite}
+.birthday-spark.s1{left:5%;top:12%}.birthday-spark.s2{right:6%;top:18%;animation-delay:.4s}.birthday-spark.s3{left:9%;bottom:15%;color:#8acde9;animation-delay:.8s}.birthday-spark.s4{right:11%;bottom:9%;animation-delay:.2s}
+.birthday-scene.celebrating .birthday-spark{animation-duration:.4s;font-size:38px}
+@keyframes twinkle{50%{opacity:.4;transform:scale(.7) rotate(45deg)}}
+.birthday-dedication{margin:15px 0!important;color:#315b7b!important;font-family:'SimSun','Songti SC',serif;font-size:14px!important;font-weight:900;letter-spacing:1px}
+.birthday-body .primary{min-width:70%;min-height:46px}
+.birthday-music-button{display:block;min-width:70%;min-height:42px;margin:9px auto 0;background:#d7edf4;border-color:#719ab1;color:#1c4a6c;font-weight:700;font-size:12px}
+.birthday-magic{margin:14px 0 2px!important;color:#285575!important;font-size:18px!important;font-weight:900}
+@media(max-width:375px){.birthday-scene{width:min(100%,260px)}}
+@media(prefers-reduced-motion:reduce){.folded-star,.star-reply-stage.opening .folded-star,.star-reply-stage.opening .unfolded-paper,.birthday-spark{animation-duration:.01ms!important;animation-iteration-count:1!important}}
+.outfit-buttons .memory-card.has-video{touch-action:none}.memory-swipe-hint{position:absolute;z-index:5;right:2px;bottom:2px;padding:0 2px;background:#fff7c7e8;border:1px solid #a9b8a8;color:#205779;font-size:8px;line-height:15px;font-weight:700;pointer-events:none}.activity-hint-swipe{margin:5px 0 0;color:#51718a;font-size:10px;line-height:1.4}
+.outfit-buttons.five-look-grid{grid-template-columns:repeat(6,minmax(0,1fr))}.outfit-buttons.five-look-grid>.memory-card{grid-column:span 2}.outfit-buttons.five-look-grid>.memory-card:nth-child(4){grid-column:2/span 2}.outfit-buttons.five-look-grid>.memory-card:nth-child(5){grid-column:4/span 2}
+@media(max-width:780px){.intro{display:none}.play-layout{padding-top:8px}.device-area{order:0;max-width:420px}.status-panel{order:1}.daily-panel{order:2}.right-column{order:3}.status-panel .panel-content{padding:8px 11px}.status-panel .profile-line{margin-bottom:5px}.daily-panel .panel-content{padding:10px 11px}.wish-content{padding:12px}}

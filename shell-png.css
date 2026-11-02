@@ -1,0 +1,187 @@
+/* User-selected shell-selected.png: 1229 × 1280. Preserve its original proportions.
+   Painted buttons stay in the PNG; HTML adds only icons, labels and hit targets. */
+html, body { cursor: url('assets/cursor-wing.svg') 16 16, auto; }
+button, a, select, summary, [role='button'], label { cursor: url('assets/cursor-wing.svg') 16 16, pointer; }
+input, textarea { cursor: url('assets/cursor-wing.svg') 16 16, text; }
+button:disabled, .character-button:disabled { cursor: url('assets/cursor-wing.svg') 16 16, not-allowed; }
+.device {
+  aspect-ratio: 1229 / 1280;
+  max-width: 400px;
+  filter: none;
+  container-type: inline-size;
+}
+.shell {
+  background-image: url('assets/shell-light-blue.png');
+  background-size: 100% 100%;
+}
+.shell-top {
+  left: 26%;
+  top: 12.9%;
+  width: 45%;
+  height: 8.6%;
+}
+.shell-top > span { color: #164b70; font-size: clamp(5px, 1.75cqw, 7px); letter-spacing: 2px; }
+.shell-top .shell-logo { font-size: clamp(14px, 5cqw, 20px); letter-spacing: 1px; line-height: 1.3; text-shadow: none; }
+.shell-wordmark-wrap { display: block; width: 100%; height: 100%; }
+.shell-wordmark { display: block; width: 100%; height: 100%; object-fit: contain; }
+.shell-bottom { display: none; }
+.screen-frame {
+  left: 25.38%;
+  top: 29.84%;
+  width: 45.73%;
+  height: 40.55%;
+  padding: 0;
+  border: 0;
+  border-radius: 11px;
+  background: #fff9dc;
+  box-shadow: none;
+  overflow: hidden;
+  z-index: 1;
+}
+.screen {
+  width: 100%;
+  height: 100%;
+  border: 1px solid #174e72;
+  border-radius: inherit;
+  box-shadow: none;
+  overflow: hidden;
+}
+.screen-hud { height: 22px; font-size: 9px; padding-left: 8px; padding-right: 8px; }
+.screen-dialogue { min-height: 32px; font-size: 9px; }
+.device-buttons {
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  display: block;
+  pointer-events: none;
+  z-index: 2;
+}
+.device-buttons button {
+  position: absolute;
+  top: 83.36%;
+  left: 31.08%;
+  width: 10.2%;
+  min-width: 44px;
+  height: 9.8%;
+  min-height: 44px;
+  padding: 0;
+  margin: 0;
+  border: 0;
+  border-radius: 50%;
+  background: transparent;
+  transform: translate(-50%, -50%);
+  pointer-events: auto;
+}
+.device-buttons button:nth-child(2) { left: 47.19%; top: 86.64%; margin-top: 0; }
+.device-buttons button:nth-child(3) { left: 63.38%; top: 83.36%; }
+.device-buttons button > span {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  border: 0;
+  background: none;
+  box-shadow: none;
+  font-size: 23px;
+  color: #345f7a;
+}
+.device-buttons button > span > img { width: 26px; height: 26px; }
+.device-buttons small {
+  position: absolute;
+  top: 100%;
+  margin-top: 1px;
+  color: #164b70;
+  font-size: 9px;
+  letter-spacing: 1px;
+  white-space: nowrap;
+}
+.device-buttons button:active:not(:disabled) { transform: translate(-50%, -47%); }
+.device-buttons button:focus-visible { outline: 3px solid #fff9dc; outline-offset: 0; }
+.name-device {
+  width: 210px;
+  height: auto;
+  aspect-ratio: 1229 / 1280;
+  background-image: url('assets/shell-light-blue.png');
+  background-size: 100% 100%;
+}
+.name-device::before { top: 17%; left: 26%; width: 45%; font-size: 9px; letter-spacing: 1.5px; }
+.name-device::after { display: none; }
+.name-screen {
+  left: 25.38%;
+  top: 29.84%;
+  width: 45.73%;
+  height: 40.55%;
+  border: 1px solid #174e72;
+  outline: 0;
+  border-radius: 6px;
+}
+@media (max-width: 375px) {
+  .shell-logo { font-size: 18px; }
+  .screen-frame { border-radius: 8px; }
+  .screen-hud { height: 20px; font-size: 8px; padding-left: 5px; padding-right: 5px; }
+  .screen-dialogue { font-size: 8px; min-height: 28px; padding: 4px; }
+  .device-buttons button > span { font-size: 21px; }
+  .device-buttons button > span > img { width: 23px; height: 23px; }
+  .device-buttons small { font-size: 8px; }
+  .name-device { width: 190px; }
+}
+@media (max-width: 340px) {
+  .food-page { padding: 3px 6px; }
+  .food-page h3 { font-size: 9px; }
+  .food-card { min-width: 100px; padding: 0 12px; }
+  .food-card img { width: 28px; height: 28px; }
+  .food-card strong { font-size: 11px; }
+  .food-footer button { padding: 3px 7px; }
+}
+
+/* Narrow LCD: room details and food controls fit inside the selected artwork. */
+.screen-hud { height: 19px; font-size: 8px; padding: 1px 5px; }
+.screen-dialogue { min-height: 29px; font-size: 8px; padding: 4px; line-height: 1.3; }
+.room-window { width: 36px; height: 35px; left: 6px; top: 10px; }
+.wall-star { left: 50px; top: 5px; font-size: 16px; }
+.wall-picture { right: 6px; top: 10px; width: 27px; height: 29px; font-size: 16px; }
+.room-shelf { width: 38px; height: 26px; right: 4px; }
+.room-shelf span { font-size: 15px; }
+.plant { left: 4px; transform: scale(.7); transform-origin: left bottom; }
+.food-page { padding: 4px 6px; }
+.food-page h3 { font-size: 9px; line-height: 1.3; }
+.food-card { min-width: 88px; padding: 1px 12px; border-width: 1px; }
+.food-card img { width: 30px; height: 30px; }
+.food-card strong { font-size: 12px; line-height: 1.3; }
+.food-card small { font-size: 7px; line-height: 1.3; }
+.food-footer { gap: 3px; }
+.food-footer button { min-width: 44px; min-height: 44px; padding: 3px 5px; box-shadow: none; }
+.food-effect { font-size: 7px; line-height: 1.25; }
+.reaction { display: none; opacity: 0; left: auto; right: 12%; top: 6px; font-size: 22px; }
+.reaction.pop { display: block; opacity: 1; }
+.reaction[hidden] { display: none !important; }
+.experience-panel { padding: 10px 12px; display: grid; grid-template-columns: 1fr 1fr; gap: 6px 12px; background: #fffdf1; border: 1px solid #afc8d8; max-width: 520px; margin: 8px auto 0; }
+.experience-panel label { display: grid; grid-template-columns: auto 1fr; gap: 7px; align-items: center; font-size: 11px; }
+.experience-panel select { min-width: 0; width: 100%; min-height: 44px; border: 1px solid #a2bcd0; border-radius: 0; padding: 4px; background: #e9f5fd; color: var(--ink); font-size: 16px; }
+.experience-panel p { grid-column: 1 / -1; margin: 0; font-size: 10px; color: #59798e; }
+.intro-divider { margin: 0 5px; }
+@media (max-width: 780px) {
+  .intro { padding: 15px 0 3px; }
+  .intro h1 { font-size: 22px; }
+  .intro > p:last-child { margin: 6px 0; font-size: 10px; }
+  .experience-panel { margin: 0; padding: 7px 10px; gap: 4px 9px; }
+  .experience-panel label { display: block; font-size: 9px; }
+  .experience-panel select { display: block; margin-top: 3px; }
+  .experience-panel p { font-size: 9px; }
+  .mode-banner { margin-top: 5px; }
+  .device-area { padding-top: 3px; }
+}
+@media (max-width: 375px) {
+  .screen-hud { height: 17px; font-size: 7px; padding: 1px 4px; }
+  .screen-dialogue { min-height: 25px; font-size: 7px; padding: 3px; }
+  .food-page { padding: 3px 4px; }
+  .food-page h3 { font-size: 8px; }
+  .food-card { min-width: 72px; padding: 0 8px; }
+  .food-card img { width: 24px; height: 24px; }
+  .food-card strong { font-size: 11px; }
+  .food-effect { font-size: 6px; }
+  .device-buttons button > span { font-size: 19px; }
+  .device-buttons button > span > img { width: 21px; height: 21px; }
+  .device-buttons small { margin-top: -1px; }
+}
